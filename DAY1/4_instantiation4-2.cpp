@@ -24,6 +24,9 @@ public:
 // 클래스 템플릿의 객체를 직접 만들면 항상 복잡합니다.
 
 // 이 경우, 함수 템플릿을 도움함수로 제공하면 편리합니다.
+
+// => "Object Generator" 라고 불리는 이름을 가진 기술 입니다.
+// => C++17 이전에 아주 널리 사용되던 기술.
 template<typename T> 
 ScopedExit<T> makeScopedExit(T handler)
 {
@@ -38,4 +41,11 @@ int main()
 	auto se1 = makeScopedExit(&cleanup); // 타입을 생략해도 됩니다.
 	auto se2 = makeScopedExit(f);
 	auto se3 = makeScopedExit([]() { std::cout << "lambda" << std::endl; });
+	
+	// C++17 이후는 클래스 템플릿도 타입 추론 되므로.. 아래 처럼 사용하세요
+
+	ScopedExit se4(&cleanup);
+	ScopedExit se5(f);
+	ScopedExit se6([]() { std::cout << "lambda" << std::endl; });
+
 }
