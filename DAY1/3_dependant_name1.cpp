@@ -17,7 +17,7 @@ void foo(T obj)
 	Object::value * 10;    // 곱하기의 의미
 	Object::type  * p1;	   // p1 이라는 포인터 변수의 선언
 
-	// 핵심 1. dependant name
+	// 핵심 1. dependant name(의존이름)
 	//      => 템플릿 인자 T에 의존해서 꺼내는 이름
 	//      => 컴파일러는 무조건 이름의 의미를 "값"으로 해석합니다.
 
