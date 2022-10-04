@@ -10,6 +10,10 @@ public:
 	// STL 컨테이너를 인자로 가지는 생성자
 	template<typename C>
 	List(const C& c) {}  
+
+	template<typename IT>
+	List(IT first, IT last) {} // 반복자는 "call by value"로 받아도 됩니다.
+
 };
 // C++17 "class template type deduction guide" 문법
 // 생성자모양 -> List<타입>
@@ -17,6 +21,9 @@ List()->List<int>;
 
 template<typename C>
 List(const C& c)->List<typename C::value_type>;   // 현재 C는 vector<int>
+
+template<typename IT>
+List(IT first, IT last)->List< typename IT::value_type >;
 
 int main()
 {
