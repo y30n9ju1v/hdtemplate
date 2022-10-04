@@ -19,7 +19,6 @@ public:
 	ScopedExit(T f) : handler(f) {}
 	~ScopedExit() { handler(); }
 };
-
 int main()
 {
 	// 1. 일반 함수 등록
@@ -29,6 +28,12 @@ int main()
 	Finalizer f;
 	ScopedExit<Finalizer> se2(f);
 
+	// 3. 람다표현식 등록.. (C++14로 놓고 ? 채워 보세요)
+//	ScopedExit< ? > se3( []() { std::cout << "lambda" << std::endl; } );
 
+	// 해결책 1. 람다표현식을 auto 변수에 담은후 사용하면 됩니다.
+	auto f2 = []() { std::cout << "lambda" << std::endl; };
+
+	ScopedExit<decltype(f2)> sec(f2);
 
 }
