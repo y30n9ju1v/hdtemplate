@@ -14,6 +14,10 @@ public:
 int main()
 {
 	// STL queue 사용시 내부 컨테이너로는 vector를 사용하면 안됩니다.
+	std::queue<int> q; // ok.  deque 사용
 	std::queue<int, std::list<int>> q1;   // ok
 	std::queue<int, std::vector<int>> q2; // 이렇게 하면 안됩니다.
+
+	q2.push(10); // ok
+	q2.pop(); // error
 }
