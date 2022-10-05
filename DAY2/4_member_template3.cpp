@@ -33,11 +33,10 @@ public:
 
 int main()
 {
-	Point<int> p1(1, 2);  
-	Point<int> p2 = p1;   
+	Point<int>   p1(1, 2);  
+	Point<int>   p2 = p1;   
+	Point<float> p3(1, 2);
 
-	Point<double> p3 = p1;
-
-	Point<float> p4(1, 2);
-	Point<double> p5 = p4;
+	Point<double> p4 = p1;
+	Point<double> p5 = p3;
 }
