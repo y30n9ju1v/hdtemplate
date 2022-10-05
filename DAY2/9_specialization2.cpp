@@ -55,7 +55,9 @@ int main()
 	Object<short*, double>::fn(); // T*, U
 	Object<float,  float>::fn();  // T, T
 	Object<int,    float>::fn();  // int, U
-
 	Object<int, short>::fn();	  // int, short
+
+	Object<short, Object<char, int>>::fn();
+					// A, Object<B, C> 로 출력해 보세요
 
 }
