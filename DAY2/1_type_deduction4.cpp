@@ -31,3 +31,14 @@ int main()
 			// T = const int&		arg = const int& && => const int&
 
 }
+// 정리
+// 규칙 1. 값 타입일때 (T arg)
+// => 인자의 "const, reference, volatile" 을 제거하고 타입 결정
+
+// 규칙 2. 참조 타입일때 (T& arg)
+// => 인자의 "reference" 만 제거, "const,volatile" 을 유지하고 타입 결정
+
+// 규칙 3. T&& 일때 (forwarding reference)
+// => 인자가 lvalue 라면 T=refernce type
+// => 인자가 rvalue 라면 T=value type
+// => "modern C++" 과정 참조
