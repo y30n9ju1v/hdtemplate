@@ -6,7 +6,7 @@ class Point
 	T x, y;
 public:
 	Point(const T& a, const T& b) : x(a), y(b) {}
-
+														// Point<T>& 
 	friend std::ostream& operator<<(std::ostream& os, const Point& pt);
 };
 
