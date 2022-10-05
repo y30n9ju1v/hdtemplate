@@ -48,6 +48,11 @@ template<> struct Object<int, short>
 	static void fn() { std::cout << "int, short" << std::endl; }
 };
 
+template<typename A, typename B, typename C> struct Object<A, Object<B,C>>
+{
+	static void fn() { std::cout << "A, Object<B, C>" << std::endl; }
+};
+
 int main()
 {
 	Object<char, double>::fn();	  // T, U
