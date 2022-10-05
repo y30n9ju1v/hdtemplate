@@ -22,6 +22,11 @@ public:
 
 	// 핵심 3. 멤버 함수 안에서는 "Vector" 만 표기해도
 	//        "Vector<T>" 와 동일 합니다.
+
+
+	// 그래서, 복사 생성자모양은 아래 2개 코드가 동일합니다.
+	Vector(const Vector& v) {}		// 이렇게 해도 되고
+//	Vector(const Vector<T>& v) {}	// 이렇게 해도 됩니다.
 };
 
 
