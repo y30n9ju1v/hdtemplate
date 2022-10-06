@@ -1,6 +1,6 @@
 #include <iostream>
 
-int foo(int a, int b);// { return 0; }
+int foo(int a, int b) ;// { return 0; }
 
 int main()
 {
@@ -18,13 +18,14 @@ int main()
 	// => 실제 함수를 호출하는 것은 아니므로, 함수 선언만 있어도 된다.
 	int n5 = sizeof( foo(1, 3) ); // int 를 반환하므로 4
 
-	// 평가 되지 않은 표현식(unevaluated expression )
+	// 평가 되지 않은 표현식( unevaluated expression )
 	// => 어떠한 표현식(함수호출등)이 실행시간에는 수행되지 않고,
 	//    컴파일 시간에만 컴파일러에의해 사용되는것
 	// => C++에는 4개가 있습니다.
 
-	sizeof(foo(1, 1));
-	decltype(foo(1, 1));
-	noexcept(foo(1, 1));
-	typeid(foo(1, 1));
+	sizeof( foo(1, 1) );	// 4
+	decltype( foo(1, 1) );	// int
+	noexcept( foo(1, 1) );	// false
+	typeid( foo(1, 1) );	// int 타입에 대한 타입정보를 담은 
+							// type_info객체. 
 }
