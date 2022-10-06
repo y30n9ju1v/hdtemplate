@@ -18,9 +18,9 @@ public:
 	// smart_ptr<int> p3 = p1; 인 경우 p1 이 smart_ptr<Dog> 이므로
 	// 위 템플릿을 사용해서 아래 코드 생성
 	
-	smart_ptr(const smart_ptr<Dog>& sp) 
-		: obj(sp.obj)  //<== 여기서 에러. "obj = int*, sp.obj = Dog*" 이므로
-	{}
+//	smart_ptr(const smart_ptr<Dog>& sp) 
+//		: obj(sp.obj)  //<== 여기서 에러. "obj = int*, sp.obj = Dog*" 이므로
+//	{}
 
 
 	template<typename> friend class smart_ptr;
