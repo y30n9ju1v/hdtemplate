@@ -10,5 +10,8 @@ int main()
 	std::string      s2 = s1;
 	std::string_view sv = s1;
 
+	// string      : 자원 소유
+	// string_view : 자원 소유 안함
+
 }
 
