@@ -12,12 +12,27 @@ void foo(double) {}
 // void goo(가상함수가있는클래스들) {}
 // void goo(가상함수가없는클래스들) {}
 
+
+// enable_if 는 "리턴 타입"에 사용하는 경우가 가장 많습니다.
+// 
+// 함수 템플릿을 조건을 만족할때만 사용하려면 "리턴타입"을 아래처럼하세요
+// 
+// => std::enable_if_t<조건, 리턴타입>
+// => std::enable_if_t<조건>   // 리턴타입이 void 라면 타입생략해도 됩니다.
+
+
 template<typename T> 
-void goo(T arg)
+std::enable_if_t< std::is_polymorphic_v<T> >
+goo(T arg)
 {
 	std::cout << "가상함수가 있는 타입에 대한 알고리즘" << std::endl;
 }
-
+template<typename T>
+std::enable_if_t< !std::is_polymorphic_v<T> >
+goo(T arg)
+{
+	std::cout << "가상함수가 없는 타입에 대한 알고리즘" << std::endl;
+}
 struct AAA
 {
 	virtual void foo() {}
@@ -26,7 +41,7 @@ struct AAA
 int main()
 {
 	AAA a;
-	int n;
+	int n = 0;
 	goo(a);
 	goo(n);
 }
