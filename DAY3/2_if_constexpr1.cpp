@@ -26,7 +26,15 @@ void printv(const int& value)
 	else
 		std::cout << value << std::endl;
 }
-
+// T=int* 일때 아래 처럼 생성됩니다.
+void printv(const int*& value)
+{
+	if (true)
+		std::cout << value << " : " << *value << std::endl;
+										// => *value 는 에러 아님
+	else
+		std::cout << value << std::endl;
+}
 
 
 int main()
