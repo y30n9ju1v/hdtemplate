@@ -13,7 +13,10 @@
 
 // "T가 정수일때만 사용하겠다" 는 것
 template<typename T> 
-typename std::enable_if< std::is_integral_v<T>, T>::type 
+//typename std::enable_if< std::is_integral_v<T>, T>::type 
+
+std::enable_if_t< std::is_integral_v<T>, T>
+
 gcd(T a, T b)
 {
 	return 0;
