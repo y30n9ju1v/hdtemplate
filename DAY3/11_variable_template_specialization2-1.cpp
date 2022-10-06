@@ -18,5 +18,9 @@ int main()
 	f1(s1);
 	f2(s1);
 	f3(s1);
+	//================
+	// s1 이 아니라 문자열 자체를 보낼때를 생각하세요
+	f2("to be or not to be");
+	f3("to be or not to be");
 }
 
