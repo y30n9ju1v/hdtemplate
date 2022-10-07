@@ -27,9 +27,9 @@ void lockAndCall(MUTEX& mtx, F f, ARGS ... args)
 }
 */
 
-// 정확히는 아래 처럼 "완벽한 전달(modernC++ 참고)" 을 사용해야 합니다.
+// 정확히는 아래 처럼 "완벽한 전달(modern C++ 참고)" 을 사용해야 합니다.
 template<typename MUTEX, typename F, typename ... ARGS>
-void lockAndCall(MUTEX& mtx, F f, ARGS&& ... args)
+inline void lockAndCall(MUTEX& mtx, F f, ARGS&& ... args)
 {
 	std::lock_guard<MUTEX> g(mtx);
 
@@ -43,3 +43,4 @@ int main()
 	lockAndCall(mtx, f1, 10); // f1(10) 호출을 mtx 로 동기화 해달라
 	lockAndCall(mtx, f2, 10, 3.4);
 }
+// 위 예제는 "effective modern C++" 에 있는 예제 입니다.
