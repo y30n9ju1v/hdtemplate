@@ -20,8 +20,12 @@ int main()
 }
 // get 의 모양
 template<int N, typename TP>
-?
+TP의 N 번째 요소의 타입&
 get(TP& tp)
 {
-	return static_cast<?>(tp).value;
+	return static_cast<TP의 N번째 기반 클래스&>(tp).value;
 }
+
+// 결국
+// 임의의 tuple 타입의 N 번째 요소의 타입과, N번째 기반 클래스 타입만 구하면됩니다.
+//"임의의 함수 타입에서 N 번째 인자의 타입 구하기" 와 유사합니다.
