@@ -24,6 +24,9 @@ template<typename T> void check(T& c)
 	// C++20 이전, "named requirement" 
 	// => 문서화로 정의
 	// => cppreference.com 에서 "왼쪽에서 named requirement"
+
+	// C++20 Concept
+	// => 타입이 가져야 하는 요구조건을 "문서화"가 아닌 코드로 표현하는 문법
 }
 
 
