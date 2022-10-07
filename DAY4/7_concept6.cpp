@@ -28,5 +28,16 @@ int main()
 	auto p1 = find(std::begin(v), std::end(v), 3);
 	auto p2 = find(std::begin(v), std::end(v), [](int a) { return a % 3 == 0; });
 
-
+	// C++20 부터는 위 처럼 이름을 같게 할수도 있지만..
+	// 과거와의 호환성을 위해서.. find_if 는 계속 find_if 입니다.
 }
+
+// 복습하시다가 질문 생기시면 
+
+// smkang @ codenuri.co.kr   로 메일 주세요
+
+
+// 복습할때 "godbolt.org" 많이 활용하세요..
+
+// C++ Template Complete GUIDE <===  최고의 서적(C++ 표준위원장 저)
+//		2/e   => C++20 없음.. 
