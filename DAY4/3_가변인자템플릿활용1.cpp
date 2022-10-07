@@ -16,12 +16,12 @@ template<typename T> struct result
 
 // 2. 원하는 타입을 얻을수 있도록 부분 특수화 합니다.
 // "int(int, double)" => int 와 나머지타입들 로 분리 해야 합니다.
+
 template<typename R, typename A1, typename A2>
 struct result<R(A1, A2)>
 {
-	using type = ? ;
+	using type = R;
 };
-
 
 template<typename T> void foo(T& a) 
 {
