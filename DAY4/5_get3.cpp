@@ -6,9 +6,13 @@
 template<typename T>
 void fn(T& tp)
 {
-	typename tuple_element<1, T>::type n1;
+	// T : tuple<int, double, char>
+
+	typename tuple_element<0, T>::type n1; // int
+	typename tuple_element<1, T>::type n2; // double
 
 	std::cout << typeid(n1).name() << std::endl; 
+	std::cout << typeid(n2).name() << std::endl;
 }
 
 int main()
