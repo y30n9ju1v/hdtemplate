@@ -1,11 +1,9 @@
 #include <iostream>
 #include "tuple.h"
 
-template<int N, typename TP> struct tuple_element
-{
-	using type = TP;
-};
-
+// primary 자체를 사용되지 않을 경우. 
+// 선언만 해도 됩니다.
+template<int N, typename TP> struct tuple_element;
 
 
 // N == 0 
