@@ -2,6 +2,12 @@
 #include <iostream>
 #include "tuple.h"
 
+// primary template
+template<int N, typename TP> struct tuple_element
+{
+	using type = TP;
+};
+
 
 template<typename T>
 void fn(T& tp)
